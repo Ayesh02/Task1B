@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: task1a
+  labels:
+    app: task1a
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1 
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /task1a
+        pathType: Prefix
+        backend:
+          service:
+            name: task1a
+            port:
+              number: 85

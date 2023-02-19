@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task1a
+  labels:
+    app: task1a
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task1a
+  template:
+    metadata:
+      labels:
+        app: task1a
+    spec:
+      containers:
+        - name: task1a
+          image: task1a-node-app
+          ports:
+            - name: http
+              containerPort: 80
+          resources:
+            limits:
+              cpu: 40m
+              memory: 100Mi

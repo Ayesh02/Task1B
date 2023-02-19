@@ -1,6 +1,6 @@
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
-name: kind-cluster-1
+name: kind-cluster-task1a
 nodes:
   - role: control-plane
   - role: worker
@@ -12,7 +12,7 @@ nodes:
           node-labels: "ingress-ready=true,topology.kubernetes.io/zone=a"
     extraPortMappings:
       - containerPort: 80
-        hostPort: 84
+        hostPort: 85
         protocol: TCP
   - role: worker
     kubeadmConfigPatches:
