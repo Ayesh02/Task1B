@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: task1a
+  name: backend
   labels:
-    app: task1a
+    app: backend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: task1a
+      app: backend
   template:
     metadata:
       labels:
-        app: task1a
+        app: backend
     spec:
       containers:
-        - name: task1a
-          image: task1a-node-app
+        - name: backend
+          image: geek02/task1a-node-app:latest
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
           resources:
             limits:
               cpu: 40m
